@@ -1,13 +1,12 @@
 # Infrastructure setup
 
-## Docker Compose and repository setup for
+## Docker Compose and repository setup for trivialise
 
 Set up all repositories for the application, and setup docker-compose to build and run the application.
 
 ```
-mkdir trivialise
-cd trivialise
-curl -o setup.sh https://raw.githubusercontent.com/smallbatch-apps/trivialise-infra/main/setup.sh
+git checkout git@github.com:smallbatch-apps/trivialise-infra.git trivialize
+cd trivialize
 bash setup.sh
 ```
 

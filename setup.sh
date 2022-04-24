@@ -7,23 +7,6 @@ NC='\033[0m'
 applicationName=Trivialize
 frontendRepo=git@github.com:smallbatch-apps/trivialise-frontend.git
 apiRepo=git@github.com:smallbatch-apps/trivialise-adonis.git
-infraRepo=false
-adminRepo=false
-
-if $infraRepo
-then
-    if [ -d "./infra" ]
-    then
-        echo "${YELLOW}Infra repo has already been cloned${NC}"
-    else
-        echo "Cloning infrastructure repo"
-        git clone $infraRepo infra
-        cp infra/docker-compose.yml ./docker-compose.yml
-        echo -e "${GREEN}Infrastructure repo cloned${NC}"
-    fi
-else
-    echo "No infrastructure repo found"
-fi
 
 if [ -d "./frontend" ]
 then
@@ -41,21 +24,6 @@ else
     echo "Cloning api repo"
     git clone $apiRepo api
     echo -e "${GREEN}API cloned${NC}"
-fi
-
-
-if $adminRepo
-then
-    if [ -d "./admin" ]
-    then
-        echo "${YELLOW}Admin repo has already been cloned${NC}"
-    else
-        echo "Cloning admin repo"
-        git clone $adminRepo admin
-        echo -e "${GREEN}Admin repo cloned${NC}"
-    fi
-else
-    echo "No admin repo found"
 fi
 
 echo -e "${GREEN}${applicationName}${NC} should now be set up. Run ${GRAY}docker-compose up${NC} to launch application."
