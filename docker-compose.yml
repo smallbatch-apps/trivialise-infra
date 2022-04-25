@@ -23,10 +23,11 @@ services:
       PG_PASSWORD: adonis
       PG_DB_NAME: adonis
       MATT_PASSWORD: test123
-      DO_SPACES_KEY: <DO_SPACES_KEY>
-      DO_SPACES_SECRET: <DO_SPACES_SECRET>
-      DO_SPACES_ENDPOINT: <DO_SPACES_ENDPOINT>
-      DO_SPACES_NAME: <DO_SPACES_NAME>
+      DO_SPACES_ENDPOINT: sgp1.digitaloceanspaces.com
+      DO_SPACES_NAME: ${DO_SPACES_NAME}
+      DO_SPACES_KEY: ${DO_SPACES_KEY}
+      DO_SPACES_SECRET: ${DO_SPACES_SECRET}
+      
   db:
     image: postgres:14
     restart: always
